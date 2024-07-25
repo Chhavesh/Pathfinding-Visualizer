@@ -8,5 +8,5 @@ export const usePathfinding = () => {
     throw new Error("usePathfinding must be used within a PathfindingProvider");
   }
 
-  return context.usePathfinding;
+  return context;
 };

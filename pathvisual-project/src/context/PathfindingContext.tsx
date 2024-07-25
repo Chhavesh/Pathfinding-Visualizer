@@ -4,7 +4,6 @@ import { createGrid } from "../utils/helpers";
 import { END_TITLE_CONFIGURATION,START_TITLE_CONFIGURATION} from "../utils/constants";
 
 interface PathfindingContextInterface {
-  [x: string]: any;
   algorithm: AlgorithmType;
   setAlgorithm: (algorithm: AlgorithmType) => void;
   maze: MazeType;
