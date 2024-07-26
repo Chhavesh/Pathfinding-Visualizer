@@ -5,7 +5,7 @@ import { usePathfinding } from "../context/PathfindingContext";
 import { MutableRefObject, useState } from "react";
 import { checkIfStartOrEnd, createNewGrid } from "../utils/helpers";
 export function Grid(
-    { isVisualizationRunningRef, } : 
+    { isVisualizationRunningRef } : 
     {isVisualizationRunningRef: MutableRefObject<boolean>;
 }) {
     const {grid, setGrid} = usePathfinding();
@@ -44,7 +44,7 @@ export function Grid(
         <div
             className={twMerge(
                 //Base classes
-                "flex items-center flex-col justify-center border-sky-300",
+                "flex items-center flex-col justify-center border-sky-300 mt-10",
                 //control Grid hieght
                 `lg:min-h-[${MAX_ROWS * 17}px]  md:min-h-[${MAX_ROWS * 15}px] 
                  xs:min-h-[${MAX_ROWS * 8}px] min-h-[${MAX_ROWS * 7}px]`,
@@ -70,7 +70,7 @@ export function Grid(
                                 handleMouseUp = {() => handleMouseUp(row, col)}
                                 handleMouseEnter = {() => handleMouseEnter(row, col)}
                                 />
-                            )
+                            );
                     })}
                         </div>
                ))}
