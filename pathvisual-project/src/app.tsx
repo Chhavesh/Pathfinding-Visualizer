@@ -1,13 +1,17 @@
 import { PathfindingProvider } from "./context/PathfindingContext";
+import { SpeedProvider } from "./context/SpeedContext";
 import { TileProvider } from "./context/TileContext";
+import {Grid} from "./components/Grid";
 
 export default function App() {
   return (
     <PathfindingProvider>
       <TileProvider>
-    <h1 className="text-5xl font-bold underline h-screen w-screen bg-purple-500">
-      Hello world!
-    </h1>
+        <SpeedProvider>
+    <div className="h-screen w-screen flex flex-col">
+      <Grid />
+    </div>
+    </SpeedProvider>
     </TileProvider>
     </PathfindingProvider>
   );

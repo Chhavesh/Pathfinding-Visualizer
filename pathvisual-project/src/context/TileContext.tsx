@@ -1,8 +1,6 @@
-import { createContext } from "preact";
+import { createContext, ReactNode, useState } from "react";
 import { TileType } from "../utils/types";
 import { END_TITLE_CONFIGURATION, START_TITLE_CONFIGURATION } from "../utils/constants";
-import { ReactNode } from "preact/compat";
-import { useState } from "preact/hooks";
 
 
 interface TileContextInterface {
@@ -29,4 +27,4 @@ export const TileProvider = ({children}: {children: ReactNode}) => {
             {children}
         </TileContext.Provider>
     );
-}
+};
