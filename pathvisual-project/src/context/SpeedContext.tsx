@@ -1,6 +1,5 @@
-import {createContext, ReactNode, useState } from "preact/compat";
+import {createContext, ReactNode, useContext, useState } from "react";
 import { SpeedType } from "../utils/types";
-
 
 interface SpeedContextInterface {
     speed: SpeedType;
@@ -19,4 +18,13 @@ export const SpeedProvider = ({children}: {children: ReactNode}) => {
             {children}
         </SpeedContext.Provider>
     );
+}
+
+export const useSpeed = () => {
+    const context = useContext(SpeedContext);
+
+    if(!context)
+        throw new Error("useSpeed must be used within a SpeedProvider");
+
+    return context;
 }

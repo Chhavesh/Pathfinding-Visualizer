@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext, ReactNode, useContext, useState } from "react";
 import { TileType } from "../utils/types";
 import { END_TITLE_CONFIGURATION, START_TITLE_CONFIGURATION } from "../utils/constants";
 
@@ -28,3 +28,12 @@ export const TileProvider = ({children}: {children: ReactNode}) => {
         </TileContext.Provider>
     );
 };
+
+export const useTile =() => {
+    const context = useContext(TileContext);
+
+    if(!context){
+        throw new Error("useTile must be used within a TileProvider");
+    }
+    return context;
+}
