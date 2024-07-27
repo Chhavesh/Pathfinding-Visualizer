@@ -1,10 +1,27 @@
+import { useState } from "preact/hooks";
 import { usePathfinding } from "../context/PathfindingContext";
+import { useTile } from "../context/TileContext";
 import { MAZES } from "../utils/constants";
+import { resetGrid } from "../utils/resetGrid";
+import { MazeType } from "../utils/types";
 import { Select } from "./Select";
 
 
 export function Nav (){
-    const {maze} = usePathfinding();
+    const [isDisabled, setIsDisabled] = useState(false);
+    const {maze,setMaze , grid} = usePathfinding();
+    const {startTile,endTile} = useTile();
+
+    const handleGenerateMaze = (maze: MazeType) => {
+        if( maze === 'NONE'){
+            setMaze(maze)
+            resetGrid({grid, startTile, endTile});
+            return;
+        }
+        setMaze(maze);
+        setIsDisabled(true);
+        //runMazeAlgorithm
+    }
 
     return (
     <div className="flex items-center justify-center min-h-[4.5rem] border-b shadow-gray-600 sm:px-5 px-0">
@@ -19,6 +36,8 @@ export function Nav (){
             options = {MAZES}
             onChange={(e) => {
                 //handel generating maze
+                 if (e.target && 'value' in e.target)
+                handleGenerateMaze(e.target.value as MazeType);
             }}
             />
     </div>
