@@ -65,5 +65,5 @@ export function Tile({
          onMouseEnter={() => handleMouseEnter(row, col)}
          onMouseUp={() => handleMouseUp(row, col)}
          />
-    )
+    );
 }

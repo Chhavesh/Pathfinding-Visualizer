@@ -1,10 +1,9 @@
-import { ReactNode, createContext, useContext, useState } from "react";
+import { ReactNode, createContext, useState } from "react";
 import { AlgorithmType, GridType, MazeType } from "../utils/types";
 import { createGrid } from "../utils/helpers";
 import { END_TITLE_CONFIGURATION,START_TITLE_CONFIGURATION} from "../utils/constants";
 
-interface PathfindingContextInterface {
-  // usePathfinding: any;
+type PathfindingContextInterface = {
   algorithm: AlgorithmType;
   setAlgorithm: (algorithm: AlgorithmType) => void;
   maze: MazeType;
@@ -45,12 +44,12 @@ export const PathfindingProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const usePathfinding = () => {
-  const context = useContext(PathfindingContext);
+// export const usePathfinding = () => {
+//   const context = useContext(PathfindingContext);
 
-  if (!context) {
-    throw new Error("usePathfinding must be used within a PathfindingProvider");
-  }
+//   if (!context) {
+//     throw new Error("usePathfinding must be used within a PathfindingProvider");
+//   }
 
-  return context;
-};
+//   return context;
+// };

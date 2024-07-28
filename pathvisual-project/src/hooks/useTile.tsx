@@ -1,11 +1,11 @@
-// import { TileContext } from "../context/TileContext";
-// import { useContext } from "preact/hooks";
+import { TileContext } from "../context/TileContext";
+import { useContext } from "react";
 
-// export const useTile =() => {
-//     const context = useContext(TileContext);
+export const useTile =() => {
+    const context = useContext(TileContext);
 
-//     if(!context){
-//         throw new Error("useTile must be used within a TileProvider");
-//     }
-//     return context;
-// }
+    if(!context){
+        throw new Error("useTile must be used within a TileProvider");
+    }
+    return context;
+}

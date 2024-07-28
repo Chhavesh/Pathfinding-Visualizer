@@ -1,9 +1,9 @@
-import { createContext, ReactNode, useContext, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import { TileType } from "../utils/types";
 import { END_TITLE_CONFIGURATION, START_TITLE_CONFIGURATION } from "../utils/constants";
 
 
-interface TileContextInterface {
+type TileContextInterface = {
     startTile: TileType;
     setStartTile: (startTile: TileType) => void;
     endTile: TileType;
@@ -29,11 +29,11 @@ export const TileProvider = ({children}: {children: ReactNode}) => {
     );
 };
 
-export const useTile =() => {
-    const context = useContext(TileContext);
+// export const useTile =() => {
+//     const context = useContext(TileContext);
 
-    if(!context){
-        throw new Error("useTile must be used within a TileProvider");
-    }
-    return context;
-}
+//     if(!context){
+//         throw new Error("useTile must be used within a TileProvider");
+//     }
+//     return context;
+// }

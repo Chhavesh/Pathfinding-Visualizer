@@ -1,6 +1,6 @@
 import { useState } from "preact/hooks";
-import { usePathfinding } from "../context/PathfindingContext";
-import { useTile } from "../context/TileContext";
+import { usePathfinding } from "../hooks/usePathfinding";
+import { useTile } from "../hooks/useTile";
 import { MAZES } from "../utils/constants";
 import { resetGrid } from "../utils/resetGrid";
 import { MazeType } from "../utils/types";

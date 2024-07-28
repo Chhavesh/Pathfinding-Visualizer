@@ -1,6 +1,7 @@
-import { MouseEventHandler } from "react";
+import {MouseEventHandler}  from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import { GrPowerReset } from "react-icons/gr";
+// import { MdLanguage } from "react-icons/md";
 
 export function PlayButton({
   handlerRunVisualizer,
@@ -19,6 +20,7 @@ export function PlayButton({
     >
       {isGraphVisualized ? (
         <GrPowerReset className="w-5 h-5" />
+
       ) : (
         <BsFillPlayFill className="w-5 h-5" />
       )}
