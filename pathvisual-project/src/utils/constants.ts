@@ -1,4 +1,4 @@
-import { MazeSelectType } from "./types";
+import { MazeSelectType, SpeedSelectType } from "./types";
 
 
 export const MAX_ROWS = 39;
@@ -41,3 +41,6 @@ export const PATH_TILE_STYLE = TILE_STYLE + " bg-green-600";
     {name: "Binary Tree", value: "BINARY_TREE"},
     {name: "Recursive Division", value: "RECURSIVE_DIVISION"},
  ];
+
+ export const SPEEDS: SpeedSelectType[] = [
+  ]

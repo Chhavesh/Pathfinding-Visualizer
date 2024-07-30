@@ -6,7 +6,6 @@ import { resetGrid } from "../utils/resetGrid";
 import { MazeType } from "../utils/types";
 import { Select } from "./Select";
 
-
 export function Nav (){
     const [isDisabled, setIsDisabled] = useState(false);
     const {maze,setMaze , grid} = usePathfinding();
@@ -17,7 +16,7 @@ export function Nav (){
             setMaze(maze)
             resetGrid({grid, startTile, endTile});
             return;
-        }
+        } 
         setMaze(maze);
         setIsDisabled(true);
         //runMazeAlgorithm
